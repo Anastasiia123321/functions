@@ -67,7 +67,7 @@ const convert = (string) => {
     const dollar = string.slice(string.length-1, string.length);
     const uaCurrency = string.slice(0, string.length-3);
     const usaCurrency = string.slice(0, string.length-1);
-    let exchangeRate = 25:
+    let exchangeRate = 25;
       if (hrn === 'uah') {
         return (uaCurrency/exchangeRate) + '$';
     } else if (dollar === '$') {
