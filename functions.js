@@ -113,15 +113,10 @@ const isPalindrome = (string) => {
     for (let i = 0; i < string.length; i++) {
       if(string[i] !== ' ') {
         newString += string[i];
-      }
-    newString = newString.toLowerCase();
-   }
-   for (let i = 0; i < newString.length; i++) {
-      if (newString[i] !== newString[newString.length-(i+1)]) {
-       return false;
-      }
-    }
-  
+  function isPalyndrom(str) {
+    const temp = str.toLowerCase();
+    return temp === temp.split('').reverse().join('');
+}
 console.log(isPalindrome('мадам'));
 
 
