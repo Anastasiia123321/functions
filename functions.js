@@ -1,6 +1,6 @@
 // Function 1
 const getMaxDigit = (number) => {
-    const someNumber = number.toString().split('');
+    const someNumber = number.toString();
     return Math.max(...someNumber);
 }
   
@@ -31,8 +31,7 @@ console.log(upperLetter('vERONIKA'));
 // Function 4 
 const getRestOfTax = (salary) => {
     const tax = 19.5;
-    const freeFromTax = salary - (salary/100)*tax;
-    return freeFromTax;
+    return salary - (salary/100)*tax;
 }
  
 console.log(getRestOfTax(1000));
@@ -68,10 +67,11 @@ const convert = (string) => {
     const dollar = string.slice(string.length-1, string.length);
     const uaCurrency = string.slice(0, string.length-3);
     const usaCurrency = string.slice(0, string.length-1);
+    const exchangeRate = 25:
       if (hrn === 'uah') {
-        return (uaCurrency/25) + '$';
+        return (uaCurrency/exchangeRate) + '$';
     } else if (dollar === '$') {
-        return (usaCurrency*25) + 'грн.';
+        return (usaCurrency*exchangeRate) + 'грн.';
     } else {
         return "Error.Ви ввели невірне значення!";
     }
@@ -82,7 +82,7 @@ console.log(convert('2500UAH'));
 
 // Function 8
 const getRandomPassword = (number) => {
-    const passLength = number === 0 ? 8 : number;
+    const passLength = number || 8;
     let password = '';
     for (let i = 0; i< passLength; i++) {
        password += Math.floor(Math.random()*10);
@@ -109,7 +109,6 @@ console.log(deleteLetters('l', 'blablabla'))
 
 // Function 10
 const isPalindrome = (string) => {
-    const result = true;
     let newString = ''; 
     for (let i = 0; i < string.length; i++) {
       if(string[i] !== ' ') {
@@ -122,8 +121,6 @@ const isPalindrome = (string) => {
        return false;
       }
     }
-   return result;
-}
   
 console.log(isPalindrome('мадам'));
 
