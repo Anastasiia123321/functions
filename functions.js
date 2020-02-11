@@ -67,11 +67,11 @@ const convert = (string) => {
     const dollar = string.slice(string.length-1, string.length);
     const uaCurrency = string.slice(0, string.length-3);
     const usaCurrency = string.slice(0, string.length-1);
-    let exchangeRate = 25;
+    
       if (hrn === 'uah') {
-        return (uaCurrency/exchangeRate) + '$';
+        return (uaCurrency/25) + '$';
     } else if (dollar === '$') {
-        return (usaCurrency*exchangeRate) + 'грн.';
+        return (usaCurrency*25) + 'грн.';
     } else {
         return "Error.Ви ввели невірне значення!";
     }
