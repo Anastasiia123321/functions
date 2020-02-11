@@ -67,7 +67,6 @@ const convert = (string) => {
     const dollar = string.slice(string.length-1, string.length);
     const uaCurrency = string.slice(0, string.length-3);
     const usaCurrency = string.slice(0, string.length-1);
-    
       if (hrn === 'uah') {
         return (uaCurrency/25) + '$';
     } else if (dollar === '$') {
@@ -82,7 +81,7 @@ console.log(convert('2500UAH'));
 
 // Function 8
 const getRandomPassword = (number) => {
-    const passLength = number || 8;
+    const passLength = number === 0 ? 8 : number;
     let password = '';
     for (let i = 0; i< passLength; i++) {
        password += Math.floor(Math.random()*10);
@@ -109,14 +108,22 @@ console.log(deleteLetters('l', 'blablabla'))
 
 // Function 10
 const isPalindrome = (string) => {
+    const result = true;
     let newString = ''; 
     for (let i = 0; i < string.length; i++) {
       if(string[i] !== ' ') {
         newString += string[i];
-  function isPalyndrom(str) {
-    const temp = str.toLowerCase();
-    return temp === temp.split('').reverse().join('');
+      }
+    newString = newString.toLowerCase();
+   }
+   for (let i = 0; i < newString.length; i++) {
+      if (newString[i] !== newString[newString.length-(i+1)]) {
+       return false;
+      }
+    }
+   return result;
 }
+  
 console.log(isPalindrome('мадам'));
 
 
